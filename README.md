@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OS Agent — 操作系统智能代理
 
 ## 一、项目概述
@@ -810,3 +811,7 @@ python main.py --web --mode remote --host 192.168.1.100
 | [pydantic](https://github.com/pydantic/pydantic) | >= 2.0.0 | MIT | 数据验证和序列化框架 |
 
 ---
+=======
+# competition_project
+AI Hackathon 2026 编程大赛 预赛题目：操作系统智能代理      (使用claude code 4-6 协助完成)
+>>>>>>> dba008dc141f8642403fd35d3477d2276f43fd8f
