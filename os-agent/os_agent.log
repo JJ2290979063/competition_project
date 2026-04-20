@@ -1,0 +1,2738 @@
+2026-04-19 10:25:18 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 10:25:18 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 10:25:18 [ERROR] tools.executor: 远程执行异常: [Errno 2] No such file or directory: '~/.ssh/id_rsa'
+2026-04-19 10:27:53 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 10:27:53 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 10:27:54 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 10:27:54 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 10:27:54 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 10:27:54 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 10:28:48 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 10:28:48 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCLkj5YQu3phhk4yYT7L'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCLkj5YQu3phhk4yYT7L'}
+During task with name 'model' and id 'b0a3be75-4f9c-2f4e-8092-a22ada7174a8'
+2026-04-19 10:34:29 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 10:34:29 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCMBtnPpuRjnjqSoAF2G'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCMBtnPpuRjnjqSoAF2G'}
+During task with name 'model' and id 'f3ccc8da-5f27-4910-2e38-6fa1bc3f19f3'
+2026-04-19 11:07:47 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 11:07:47 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCPj8n7Fred8wtVGV3P8'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCPj8n7Fred8wtVGV3P8'}
+During task with name 'model' and id '505bf23c-b7fc-0647-6acd-6e03d0dc2ea0'
+2026-04-19 11:08:07 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 11:08:07 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCPkdubNAYvMvPrp6DFj'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCPkdubNAYvMvPrp6DFj'}
+During task with name 'model' and id 'fcb902b4-c65f-7012-4225-52c93c4b23db'
+2026-04-19 11:27:12 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 11:27:12 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 11:27:12 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 11:27:12 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 11:27:12 [ERROR] tools.executor: SSH 执行异常: Authentication failed.
+2026-04-19 11:29:51 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 11:29:51 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 11:29:51 [ERROR] tools.executor: 远程执行异常: [Errno 2] No such file or directory: '172.26.69.81'
+2026-04-19 11:35:44 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 11:35:44 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 11:35:44 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 11:35:44 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 11:35:44 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 11:35:44 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 11:35:51 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 11:35:51 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCRsGNigidGs2WduhFpB'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCRsGNigidGs2WduhFpB'}
+During task with name 'model' and id '471af3ce-7173-2071-2683-43a25e091ad1'
+2026-04-19 14:48:37 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:48:37 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCgZmKkdf3YUwFho1dyA'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCgZmKkdf3YUwFho1dyA'}
+During task with name 'model' and id '5c9503ff-795b-659b-358d-4c88fbde90db'
+2026-04-19 14:50:41 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 14:50:41 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 14:50:41 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 14:50:41 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 14:50:41 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 14:50:41 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 14:50:58 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:50:58 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCgk98TLozmWEWXiPDF9'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCgk98TLozmWEWXiPDF9'}
+During task with name 'model' and id 'b38281cd-fcb0-68f4-b0b9-3476be91160b'
+2026-04-19 14:54:37 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:54:37 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCh2Hbt8AxScdpnXi8Gb'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCh2Hbt8AxScdpnXi8Gb'}
+During task with name 'model' and id '6ca725f2-7edd-1aa7-7f6c-45f0b2baadba'
+2026-04-19 14:55:30 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:55:30 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCh6EGL5ZAXy8pF6x4Ym'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCh6EGL5ZAXy8pF6x4Ym'}
+During task with name 'model' and id 'd2a2e2a1-eb9c-aff4-7e73-c63169abecc5'
+2026-04-19 14:56:06 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 14:56:06 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 14:56:07 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 14:56:07 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 14:56:07 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 14:56:07 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 14:56:31 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:56:31 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChAkk1AfZb5pVYDEu6t'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChAkk1AfZb5pVYDEu6t'}
+During task with name 'model' and id 'e3a081bf-cc25-4cd7-2947-36063c71d4e7'
+2026-04-19 14:58:37 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 14:58:37 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChL2Z1i1aBjBnCvfxtv'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChL2Z1i1aBjBnCvfxtv'}
+During task with name 'model' and id '6a5cdb84-e292-7953-ecbf-c0768c2a8bfb'
+2026-04-19 15:01:06 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:01:06 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChWyKMXGFPrLH3iXdbv'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChWyKMXGFPrLH3iXdbv'}
+During task with name 'model' and id '5b0b159f-30e6-367e-26db-5a00cad04366'
+2026-04-19 15:03:19 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:03:19 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChgo2G7TrYciamvHbeh'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaChgo2G7TrYciamvHbeh'}
+During task with name 'model' and id '7bfa8e0b-895e-5a6d-3496-51cc9fd9ace0'
+2026-04-19 15:07:27 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:07:27 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCi13JFA9yyJLDyuy3hn'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCi13JFA9yyJLDyuy3hn'}
+During task with name 'model' and id '3a9f94e3-17e0-6b79-5d1a-7119fedd5803'
+2026-04-19 15:09:24 [INFO] httpx: HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:09:24 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCi9hc5PTy2anRr5v5aV'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'type': 'error', 'error': {'type': 'authentication_error', 'message': 'invalid x-api-key'}, 'request_id': 'req_011CaCi9hc5PTy2anRr5v5aV'}
+During task with name 'model' and id '3ae9f456-4329-507b-379f-ac831ff6f3a1'
+2026-04-19 15:12:03 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 15:12:03 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 15:12:03 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:12:03 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:12:03 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 15:12:03 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 15:12:16 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/v1/messages "HTTP/1.1 404 Not Found"
+2026-04-19 15:12:16 [ERROR] agent.core: Agent 执行异常: Error code: 404 - {'error': {'message': 'Invalid URL (POST /v1/v1/messages)', 'type': 'invalid_request_error', 'param': '', 'code': ''}}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.NotFoundError: Error code: 404 - {'error': {'message': 'Invalid URL (POST /v1/v1/messages)', 'type': 'invalid_request_error', 'param': '', 'code': ''}}
+During task with name 'model' and id '8ad9f96a-e124-a419-8949-6572459e79e0'
+2026-04-19 15:21:41 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/v1/messages "HTTP/1.1 404 Not Found"
+2026-04-19 15:21:41 [ERROR] agent.core: Agent 执行异常: Error code: 404 - {'error': {'message': 'Invalid URL (POST /v1/v1/messages)', 'type': 'invalid_request_error', 'param': '', 'code': ''}}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 157, in chat
+    # 调用 Agent
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.NotFoundError: Error code: 404 - {'error': {'message': 'Invalid URL (POST /v1/v1/messages)', 'type': 'invalid_request_error', 'param': '', 'code': ''}}
+During task with name 'model' and id 'db11a626-61e8-358f-9a10-c41262e3ddee'
+2026-04-19 15:23:14 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 15:23:14 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 15:23:15 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:23:15 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:23:15 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 15:23:15 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 15:23:31 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 503 Service Unavailable"
+2026-04-19 15:23:31 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.410225 seconds
+2026-04-19 15:23:31 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 503 Service Unavailable"
+2026-04-19 15:23:31 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.945094 seconds
+2026-04-19 15:23:33 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 503 Service Unavailable"
+2026-04-19 15:23:33 [ERROR] agent.core: Agent 执行异常: Error code: 503 - {'error': {'code': 'model_not_found', 'message': 'No available channel for model claude-opus-4-6 under group gemini-ant (distributor) (request id: 202604190723255947277038268d9d6fWA6AGZK)', 'type': 'new_api_error'}}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 503 - {'error': {'code': 'model_not_found', 'message': 'No available channel for model claude-opus-4-6 under group gemini-ant (distributor) (request id: 202604190723255947277038268d9d6fWA6AGZK)', 'type': 'new_api_error'}}
+During task with name 'model' and id 'b9e6505b-76d4-c8c8-ebac-d98af03e681d'
+2026-04-19 15:36:49 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:36:49 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'error': {'code': '', 'message': 'Invalid token (request id: 20260419073642309971578268d9d6SypuEMUT)', 'type': 'new_api_error'}}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'error': {'code': '', 'message': 'Invalid token (request id: 20260419073642309971578268d9d6SypuEMUT)', 'type': 'new_api_error'}}
+During task with name 'model' and id '1d079cd7-f2b0-986a-82e9-1a23b91b7dfb'
+2026-04-19 15:37:11 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 401 Unauthorized"
+2026-04-19 15:37:11 [ERROR] agent.core: Agent 执行异常: Error code: 401 - {'error': {'code': '', 'message': 'Invalid token (request id: 202604190737038377798228268d9d6LObEyAIZ)', 'type': 'new_api_error'}}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.AuthenticationError: Error code: 401 - {'error': {'code': '', 'message': 'Invalid token (request id: 202604190737038377798228268d9d6LObEyAIZ)', 'type': 'new_api_error'}}
+During task with name 'model' and id '1230f228-8f03-a4db-a014-6abb265fd92f'
+2026-04-19 15:39:18 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 15:39:18 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 15:39:19 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:39:19 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:39:19 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 15:39:19 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 15:39:32 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:39:32 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.495477 seconds
+2026-04-19 15:39:58 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 15:39:58 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 15:39:58 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:39:58 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:39:58 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 15:39:58 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 15:40:36 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 15:41:39 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:41:39 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.459808 seconds
+2026-04-19 15:41:49 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:41:49 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.838998 seconds
+2026-04-19 15:41:57 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:41:57 [ERROR] agent.core: Agent 执行异常: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 202604190741428753286651qQVfH4S) (request id: 202604190741428701183428268d9d62bDeYNpq)'}, 'type': 'error'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1310, in model_node
+    model_response = _execute_model_sync(request)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\factory.py", line 1282, in _execute_model_sync
+    output = model_.invoke(messages)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\base.py", line 5695, in invoke
+    return self.bound.invoke(
+           ~~~~~~~~~~~~~~~~~^
+        input,
+        ^^^^^^
+        self._merge_configs(config),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        **{**self.kwargs, **kwargs},
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 455, in invoke
+    self.generate_prompt(
+    ~~~~~~~~~~~~~~~~~~~~^
+        [self._convert_input(input)],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ).generations[0][0],
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1198, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1005, in generate
+    self._generate_with_cache(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        m,
+        ^^
+    ...<2 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\language_models\chat_models.py", line 1310, in _generate_with_cache
+    result = self._generate(
+        messages, stop=stop, run_manager=run_manager, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1564, in _generate
+    data = self._create(payload)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_anthropic\chat_models.py", line 1229, in _create
+    return self._client.messages.create(**payload)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 202604190741428753286651qQVfH4S) (request id: 202604190741428701183428268d9d62bDeYNpq)'}, 'type': 'error'}
+During task with name 'model' and id 'dd4d6439-7bcf-f954-e2f9-3ae05384678a'
+2026-04-19 15:42:32 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:42:32 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.445825 seconds
+2026-04-19 15:42:36 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 15:42:36 [ERROR] agent.core: Agent 执行异常: 'ToolCallRequest' object has no attribute 'name'
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 819, in _func
+    outputs = list(
+        executor.map(self._run_one, tool_calls, input_types, tool_runtimes)
+    )
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 639, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 311, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 1047, in _run_one
+    content = _handle_tool_error(e, flag=self._handle_tool_errors)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 432, in _handle_tool_error
+    content = flag(e)  # type: ignore [assignment, call-arg]
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 389, in _default_handle_tool_errors
+    raise e
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 1041, in _run_one
+    return self._wrap_tool_call(tool_request, execute)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langsmith\run_helpers.py", line 769, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\middleware\types.py", line 2036, in wrapped
+    return func(request, handler)
+  File "D:\Competition\os-agent\agent\core.py", line 49, in safety_check
+    tool_name = request.name
+                ^^^^^^^^^^^^
+AttributeError: 'ToolCallRequest' object has no attribute 'name'
+During task with name 'tools' and id '6a10257f-85a8-5c40-30e2-d1d1a4860b6b'
+2026-04-19 15:47:29 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 15:47:45 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 15:48:15 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 15:48:15 [ERROR] agent.core: Agent 执行异常: 'ToolCallRequest' object has no attribute 'name'
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 158, in chat
+    result = self.agent.invoke({"messages": messages})
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 3365, in invoke
+    for chunk in self.stream(
+                 ~~~~~~~~~~~^
+        input,
+        ^^^^^^
+    ...<10 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\main.py", line 2759, in stream
+    for _ in runner.tick(
+             ~~~~~~~~~~~^
+        [t for t in loop.tasks.values() if not t.writes],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        schedule_task=loop.accept_push,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ):
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_runner.py", line 167, in tick
+    run_with_retry(
+    ~~~~~~~~~~~~~~^
+        t,
+        ^^
+    ...<10 lines>...
+        },
+        ^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\pregel\_retry.py", line 126, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 656, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\_internal\_runnable.py", line 400, in invoke
+    ret = self.func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 819, in _func
+    outputs = list(
+        executor.map(self._run_one, tool_calls, input_types, tool_runtimes)
+    )
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 639, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 311, in _result_or_cancel
+    return fut.result(timeout)
+           ~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 443, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\_base.py", line 395, in __get_result
+    raise self._exception
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\22909\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain_core\runnables\config.py", line 610, in _wrapped_fn
+    return contexts.pop().run(fn, *args)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 1047, in _run_one
+    content = _handle_tool_error(e, flag=self._handle_tool_errors)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 432, in _handle_tool_error
+    content = flag(e)  # type: ignore [assignment, call-arg]
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 389, in _default_handle_tool_errors
+    raise e
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langgraph\prebuilt\tool_node.py", line 1041, in _run_one
+    return self._wrap_tool_call(tool_request, execute)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langsmith\run_helpers.py", line 769, in wrapper
+    function_result = run_container["context"].run(
+        func, *args, **kwargs
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\langchain\agents\middleware\types.py", line 2036, in wrapped
+    return func(request, handler)
+  File "D:\Competition\os-agent\agent\core.py", line 49, in safety_check
+    tool_name = request.name
+                ^^^^^^^^^^^^
+AttributeError: 'ToolCallRequest' object has no attribute 'name'
+During task with name 'tools' and id '7b333260-a62d-fcec-4062-a6a0f5d51412'
+2026-04-19 15:59:01 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 15:59:01 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 15:59:02 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:59:02 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 15:59:02 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 15:59:02 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 15:59:19 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:59:19 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.495417 seconds
+2026-04-19 15:59:27 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:59:27 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.989913 seconds
+2026-04-19 15:59:34 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 15:59:34 [ERROR] agent.core: Agent 执行异常: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419075920601888543bj95Yr1i) (request id: 202604190759205960740288268d9d6PyGjCnsO)'}, 'type': 'error'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 139, in chat
+    llm_text = self._call_llm(messages)
+  File "D:\Competition\os-agent\agent\core.py", line 104, in _call_llm
+    response = self.client.messages.create(
+        model=config.MODEL_NAME,
+    ...<3 lines>...
+        messages=messages,
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419075920601888543bj95Yr1i) (request id: 202604190759205960740288268d9d6PyGjCnsO)'}, 'type': 'error'}
+2026-04-19 16:00:16 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:00:16 [INFO] agent.core: 工具 [check_disk_usage] 执行完成，结果长度: 915
+2026-04-19 16:00:30 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:03:04 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:03:04 [INFO] agent.core: 工具 [check_port] 执行完成，结果长度: 13
+2026-04-19 16:03:11 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:03:11 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.446712 seconds
+2026-04-19 16:03:18 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:03:34 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:03:34 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.410765 seconds
+2026-04-19 16:03:42 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:03:42 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.921875 seconds
+2026-04-19 16:03:49 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:03:49 [ERROR] agent.core: Agent 执行异常: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080335839126141nVPS66ZE) (request id: 202604190803358333845398268d9d6yogIlEpW)'}, 'type': 'error'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 139, in chat
+    llm_text = self._call_llm(messages)
+  File "D:\Competition\os-agent\agent\core.py", line 104, in _call_llm
+    response = self.client.messages.create(
+        model=config.MODEL_NAME,
+    ...<3 lines>...
+        messages=messages,
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080335839126141nVPS66ZE) (request id: 202604190803358333845398268d9d6yogIlEpW)'}, 'type': 'error'}
+2026-04-19 16:04:19 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:04:19 [INFO] agent.core: 工具 [list_processes] 执行完成，结果长度: 74
+2026-04-19 16:04:26 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:04:26 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.416151 seconds
+2026-04-19 16:04:29 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:04:29 [INFO] agent.core: 工具 [list_processes] 执行完成，结果长度: 74
+2026-04-19 16:04:36 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:04:36 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.439057 seconds
+2026-04-19 16:04:40 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:04:40 [INFO] agent.core: 工具 [list_listening_ports] 执行完成，结果长度: 385
+2026-04-19 16:04:47 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:04:47 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.468750 seconds
+2026-04-19 16:04:54 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:04:54 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.821836 seconds
+2026-04-19 16:05:02 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:05:02 [ERROR] agent.core: Agent 执行异常: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080448364084163eoZYj6BV) (request id: 202604190804483568061148268d9d6q4JiEFwL)'}, 'type': 'error'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 139, in chat
+    llm_text = self._call_llm(messages)
+  File "D:\Competition\os-agent\agent\core.py", line 104, in _call_llm
+    response = self.client.messages.create(
+        model=config.MODEL_NAME,
+    ...<3 lines>...
+        messages=messages,
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080448364084163eoZYj6BV) (request id: 202604190804483568061148268d9d6q4JiEFwL)'}, 'type': 'error'}
+2026-04-19 16:05:56 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:05:56 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.482370 seconds
+2026-04-19 16:05:58 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:05:58 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 16:06:05 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:06:05 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.436667 seconds
+2026-04-19 16:06:13 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:06:13 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.892323 seconds
+2026-04-19 16:06:21 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:06:21 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 16:06:28 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:06:28 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.495612 seconds
+2026-04-19 16:06:35 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:06:35 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.985427 seconds
+2026-04-19 16:06:43 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 16:06:43 [ERROR] agent.core: Agent 执行异常: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080628977563902dTyxv3Hn) (request id: 202604190806289717922078268d9d65mpHSQfc)'}, 'type': 'error'}
+Traceback (most recent call last):
+  File "D:\Competition\os-agent\agent\core.py", line 139, in chat
+    llm_text = self._call_llm(messages)
+  File "D:\Competition\os-agent\agent\core.py", line 104, in _call_llm
+    response = self.client.messages.create(
+        model=config.MODEL_NAME,
+    ...<3 lines>...
+        messages=messages,
+    )
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_utils\_utils.py", line 283, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\resources\messages\messages.py", line 1000, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/v1/messages",
+        ^^^^^^^^^^^^^^^
+    ...<30 lines>...
+        stream_cls=Stream[RawMessageStreamEvent],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1368, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\22909\AppData\Roaming\Python\Python314\site-packages\anthropic\_base_client.py", line 1141, in request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 502 - {'error': {'type': '<nil>', 'message': '上游 API 调用失败: 所有凭据均已禁用（4/4） (request id: 20260419080628977563902dTyxv3Hn) (request id: 202604190806289717922078268d9d65mpHSQfc)'}, 'type': 'error'}
+2026-04-19 16:42:23 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 16:42:23 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 16:42:23 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 16:42:23 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 16:42:24 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 16:42:24 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 16:42:27 [INFO] agent.core: 服务器环境探测完成: JJ
+2026-04-19 16:42:42 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:42:42 [INFO] agent.core: 工具 [check_disk_usage] 执行完成，结果长度: 915
+2026-04-19 16:42:50 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:43:16 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 16:43:16 [INFO] agent.core: 工具 [check_port] 执行完成，结果长度: 13
+2026-04-19 16:43:29 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:51:02 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 17:51:02 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 17:51:02 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 17:51:02 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 17:51:02 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 17:51:02 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 17:51:08 [INFO] agent.core: 服务器环境探测完成: JJ
+2026-04-19 17:51:40 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:52:06 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:52:39 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:10 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:10 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 17:53:12 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:12 [INFO] agent.core: 工具 [list_directory] 执行完成，结果长度: 71
+2026-04-19 17:53:20 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:53 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:53 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 17:53:56 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:56 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 17:53:58 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:53:58 [INFO] agent.core: 工具 [list_directory] 执行完成，结果长度: 249
+2026-04-19 17:54:08 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:57:48 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:57:48 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 17:57:51 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:57:51 [INFO] agent.core: 工具 [find_large_files] 执行完成，结果长度: 12
+2026-04-19 17:57:54 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:57:54 [INFO] agent.core: 工具 [list_directory] 执行完成，结果长度: 1162
+2026-04-19 17:58:01 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:59:10 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:59:10 [INFO] agent.core: 工具 [check_disk_usage] 执行完成，结果长度: 915
+2026-04-19 17:59:15 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 502 Bad Gateway"
+2026-04-19 17:59:15 [INFO] anthropic._base_client: Retrying request to /v1/messages in 0.394433 seconds
+2026-04-19 17:59:22 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 17:59:26 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:17:23 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:17:32 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:18:56 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:19:39 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:27:05 [INFO] tools.executor: 初始化执行器: mode=remote
+2026-04-19 18:27:05 [INFO] paramiko.transport: Connected (version 2.0, client OpenSSH_9.6p1)
+2026-04-19 18:27:06 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 18:27:06 [INFO] paramiko.transport: Authentication (publickey) failed.
+2026-04-19 18:27:06 [INFO] paramiko.transport: Authentication (password) successful!
+2026-04-19 18:27:06 [INFO] tools.executor: SSH 连接建立: jj280012@172.26.69.81:22
+2026-04-19 18:27:09 [INFO] agent.core: 服务器环境探测完成: JJ
+2026-04-19 18:27:30 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
+2026-04-19 18:27:30 [INFO] agent.core: 工具 [check_user_exists] 执行完成，结果长度: 17
+2026-04-19 18:27:36 [INFO] httpx: HTTP Request: POST https://ruoli.dev/v1/messages "HTTP/1.1 200 OK"
